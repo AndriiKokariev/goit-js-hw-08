@@ -95,13 +95,14 @@ gallery.addEventListener("click", (event) => {
 
   const instance = basicLightbox.create(`
     <div class="modal">
-      <img src="${largeImageURL}" alt="${event.target.alt}">
+      <img src="${largeImageURL}" alt="${event.target.alt}" >
     </div>
   `);
 
   instance.show();
 
   const modalImage = instance.element().querySelector("img");
+  modalImage.classList.add("modal-image");
 
   modalImage.addEventListener("click", () => {
     instance.close();
